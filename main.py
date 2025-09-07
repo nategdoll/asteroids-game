@@ -7,6 +7,8 @@ from constants import *
 def main():
     pygame.init()
     print("Starting Asteroids!")
+    pygame.time.Clock().tick(60)
+    dt = 0
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     while pygame.get_init():
         for event in pygame.event.get():
@@ -16,6 +18,7 @@ def main():
 
         # Call this last
         pygame.display.flip()
+        dt = pygame.time.Clock().tick(60) / 1000
 
 
 if __name__ == "__main__":
